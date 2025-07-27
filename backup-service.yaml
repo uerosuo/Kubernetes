@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"nginx"},"name":"nginx-private-service","namespace":"default"},"spec":{"ports":[{"port":80,"protocol":"TCP","targetPort":80}],"selector":{"app":"nginx"},"type":"ClusterIP"}}
+  creationTimestamp: "2025-07-27T05:31:39Z"
+  labels:
+    app: nginx
+  name: nginx-private-service
+  namespace: default
+  resourceVersion: "2572"
+  uid: d7ca70ca-81f9-4f16-b9a5-c0a6c344c122
+spec:
+  clusterIP: 10.107.163.127
+  clusterIPs:
+  - 10.107.163.127
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
